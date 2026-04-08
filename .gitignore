@@ -1,0 +1,11 @@
+# 忽略 Python 虚拟环境
+venv/
+env/
+
+# 忽略包含敏感信息（API Key, 数据库密码）的配置文件
+config.ini
+
+# 忽略 Python 运行时生成的缓存文件
+__pycache__/
+*.pyc
+.DS_Store
