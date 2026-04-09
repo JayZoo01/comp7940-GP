@@ -11,3 +11,4 @@ typing_extensions
 urllib3
 pymongo
 dnspython
+redis==5.0.3
