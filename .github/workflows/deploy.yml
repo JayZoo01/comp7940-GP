@@ -21,12 +21,7 @@ jobs:
           script: |
             cd ~/comp7940-GP
             git pull origin main
-            # 停止并移除旧容器（如果存在）
-            docker stop my-weather-bot || true
-            docker rm my-weather-bot || true
-            # 重新构建镜像并启动（目前先用 docker build，后续我们会升级为 docker-compose）
-            docker build -t my-weather-bot .
-            docker run -d --name my-weather-bot \
-              -v $(pwd)/config.ini:/app/config.ini \
-              --restart always \
-              my-weather-bot
+            # 停止并移除旧容器集群
+            docker-compose down || true
+            # 重新构建并后台启动包含 Bot 和 Redis 的新集群
+            docker-compose up -d --build
