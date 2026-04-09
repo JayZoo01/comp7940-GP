@@ -22,6 +22,6 @@ jobs:
             cd ~/comp7940-GP
             git pull origin main
             # 停止并移除旧容器集群
-            docker-compose down || true
+            docker compose down || true
             # 重新构建并后台启动包含 Bot 和 Redis 的新集群
-            docker-compose up -d --build
+            docker compose up -d --build
