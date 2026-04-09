@@ -25,3 +25,4 @@ jobs:
             docker compose down || true
             # 重新构建并后台启动包含 Bot 和 Redis 的新集群
             docker compose up -d --build
+# 触发一次全新的完美部署
